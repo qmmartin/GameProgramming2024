@@ -1,0 +1,12 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1705947869
+CharacterBody2D.gd::GDScript::-1::1705946833::0::1::::<>CharacterBody2D<>::
+export_presets.cfg::TextFile::-1::1705947320::0::1::::<><>::
+icon.svg::CompressedTexture2D::4097557773117449922::1705946333::1705946337::1::::<><>::
+node_2d.tscn::PackedScene::4686307280669834847::1705947171::0::1::::<><>::res://CharacterBody2D.gd<>uid://813n7rxinlj3::::res://sprites/pip_sit_right.png<>uid://bdfa1xl8fn3al::::res://sprites/forest_large_01.png<>uid://d3okwrg5flgsw::::res://sprites/forest_med_01.png
+::res://sprites/::1705946378
+forest_large_01.png::CompressedTexture2D::2607356760555520275::1705556090::1705946378::1::::<><>::
+forest_med_01.png::CompressedTexture2D::9154098322430582394::1705434457::1705946378::1::::<><>::
+forest_tile_set.png::CompressedTexture2D::9072996294633100032::1705433844::1705946378::1::::<><>::
+pip_sit_left.png::CompressedTexture2D::6084981300379510912::1705435218::1705946378::1::::<><>::
+pip_sit_right.png::CompressedTexture2D::2371630660843956610::1705435395::1705946378::1::::<><>::
