@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://de5gr06jrrms7"]
+
+[ext_resource type="Texture2D" uid="uid://dm7ghp8v5veao" path="res://sprites/purple_acorn.png" id="1_q46gx"]
+[ext_resource type="Script" path="res://scripts/purple_acorn.gd" id="2_um7f1"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(500, 20)
+script = ExtResource("2_um7f1")
+
+[node name="purple_acorn" type="Sprite2D" parent="StaticBody2D"]
+z_index = 1
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_q46gx")

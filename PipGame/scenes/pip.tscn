@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://ca181tmpjmxtt"]
+
+[ext_resource type="Script" path="res://scripts/pip.gd" id="1_ld7ls"]
+[ext_resource type="Script" path="res://scripts/pip_scene.gd" id="1_lfys4"]
+[ext_resource type="Texture2D" uid="uid://813n7rxinlj3" path="res://sprites/pip_sit_right.png" id="2_wbjfa"]
+[ext_resource type="AudioStream" uid="uid://b4r22d0acwwki" path="res://sounds/walking-on-crunchy-leaves-139033.mp3" id="3_ircjv"]
+[ext_resource type="Script" path="res://scripts/player_camera.gd" id="5_4mcy7"]
+[ext_resource type="AudioStream" uid="uid://b0qgdu8kbo2ff" path="res://sounds/pip_fall.mp3" id="5_keni8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12dkg"]
+size = Vector2(163.636, 172.093)
+
+[sub_resource type="Animation" id="Animation_wiwbe"]
+resource_name = "walk_right"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f8yol"]
+_data = {
+"walk_right": SubResource("Animation_wiwbe")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_lfys4")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(579, 323)
+script = ExtResource("1_ld7ls")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+z_index = 535
+position = Vector2(0, -2)
+scale = Vector2(0.22, 0.215)
+texture = ExtResource("2_wbjfa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+scale = Vector2(0.22, 0.215)
+shape = SubResource("RectangleShape2D_12dkg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_f8yol")
+}
+
+[node name="walk_forest" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
+stream = ExtResource("3_ircjv")
+volume_db = 10.0
+
+[node name="pip_fall" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
+stream = ExtResource("5_keni8")
+volume_db = 10.0
+max_distance = 9.22337e+18
+
+[node name="Camera" type="Camera2D" parent="CharacterBody2D"]
+script = ExtResource("5_4mcy7")
