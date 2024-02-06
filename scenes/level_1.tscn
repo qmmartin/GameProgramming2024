@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://0g2a407xhoec"]
+[gd_scene load_steps=13 format=3 uid="uid://0g2a407xhoec"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_fpwq6"]
 [ext_resource type="Texture2D" uid="uid://bdfa1xl8fn3al" path="res://sprites/forest_large_01.png" id="1_q6oju"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b1kb21q8aiwxy" path="res://sprites/forest_huge_01.png" id="4_0g82n"]
 [ext_resource type="Texture2D" uid="uid://cgd8xm3fs2ot0" path="res://sprites/forest_fall.png" id="4_l2esk"]
 [ext_resource type="AudioStream" uid="uid://blcdqulrq34i5" path="res://sounds/pip_forest_theme.mp3" id="8_k0bfk"]
+[ext_resource type="Script" path="res://scripts/forest_music.gd" id="9_x4135"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7q4xq"]
 size = Vector2(546, 204.5)
@@ -108,8 +109,19 @@ texture = ExtResource("1_q6oju")
 position = Vector2(537, 196)
 shape = SubResource("RectangleShape2D_y1otw")
 
+[node name="forest_large_04" type="StaticBody2D" parent="."]
+position = Vector2(1809, 229)
+
+[node name="Sprite2D" type="Sprite2D" parent="forest_large_04"]
+position = Vector2(534, 201)
+texture = ExtResource("1_q6oju")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="forest_large_04"]
+position = Vector2(537, 196)
+shape = SubResource("RectangleShape2D_y1otw")
+
 [node name="forest_medium_02" type="StaticBody2D" parent="."]
-position = Vector2(1711, 128)
+position = Vector2(1705, 41)
 
 [node name="Sprite2D" type="Sprite2D" parent="forest_medium_02"]
 position = Vector2(344, 245)
@@ -122,6 +134,6 @@ shape = SubResource("RectangleShape2D_2um7o")
 [node name="forest_music" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-579, -323)
 stream = ExtResource("8_k0bfk")
-volume_db = 5.0
-autoplay = true
+volume_db = -15.0
 max_distance = 9.22337e+18
+script = ExtResource("9_x4135")

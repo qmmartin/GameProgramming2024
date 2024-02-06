@@ -7,6 +7,10 @@ const JUMP_VELOCITY = -400.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var jumps = 1
+var dash_duration = 0.1
+var dash_speed = 500
+var dash_timer = 0
+var dash_direction = Vector2.ZERO
 
 # Reference to the camera node
 @onready var Camera = $Camera
@@ -54,13 +58,14 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_axis("ui_left", "ui_right")
 	
-	# DASHING
-	if velocity.x>0: #DASH RIGHT
-		if Input.is_action_just_pressed("ui_page_up"):
-			velocity.x += 500
-	if velocity.x<0: #DASH LEFT
-		if Input.is_action_just_pressed("ui_page_up"):
-			velocity.x -= 500
+			
+	## DASHING
+	#if velocity.x>0: #DASH RIGHT
+		#if Input.is_action_just_pressed("ui_page_up"):
+			#velocity.x += 500
+	#if velocity.x<0: #DASH LEFT
+		#if Input.is_action_just_pressed("ui_page_up"):
+			#velocity.x -= 500
 
 	if direction:
 		velocity.x = direction * SPEED
@@ -73,8 +78,20 @@ func _physics_process(delta):
 	elif velocity.x > 0:
 		# Set the sprite frame for walking right
 		sprite.flip_h = false
+	
+	if Input.is_key_pressed(KEY_SHIFT):
+		dash()
+	
+	if dash_timer > 0:
+		# Get the current velocity and direction
+		# Increase velocity in the current direction
+		velocity.x += direction * 500
 		
-	#body_entered(purple_acorn)
+		# Decrease the dash timer
+		dash_timer -= delta
+		# If dash timer expires, reset the dash
+		if dash_timer <= 0:
+			dash_timer = 0
 
 	move_and_slide()
 
@@ -94,7 +111,10 @@ func stop_following_player():
 		camera_original_parent.remove_child(Camera)
 	# Set the camera position to a fixed point
 	Camera.position.y = 0
-	
+
+func dash():
+	# Start the dash timer
+	dash_timer = dash_duration
 #func body_entered(body):
 	#if body.has_method("pickup"):
 		#body.pickup()
