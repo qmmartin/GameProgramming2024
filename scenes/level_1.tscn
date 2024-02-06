@@ -24,16 +24,16 @@ script = ExtResource("1_fpwq6")
 [node name="background_-1" type="StaticBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="background_-1"]
-position = Vector2(-1287, 400)
-scale = Vector2(2.25, 2.25)
+position = Vector2(-1790, 353)
+scale = Vector2(2.5, 3)
 texture = ExtResource("2_0tc52")
 
 [node name="background_01" type="StaticBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="background_01"]
 z_index = -4096
-position = Vector2(961, 400)
-scale = Vector2(1.5, 1.5)
+position = Vector2(956, 352)
+scale = Vector2(2, 2)
 texture = ExtResource("3_yfnvc")
 
 [node name="background_02" type="StaticBody2D" parent="."]
@@ -41,8 +41,8 @@ position = Vector2(2250, -2)
 
 [node name="Sprite2D" type="Sprite2D" parent="background_02"]
 z_index = -4096
-position = Vector2(953, 402)
-scale = Vector2(2.252, 2.25)
+position = Vector2(1429.5, 355.25)
+scale = Vector2(2.5, 3)
 texture = ExtResource("2_0tc52")
 
 [node name="Fall Message" type="StaticBody2D" parent="."]

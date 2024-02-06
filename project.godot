@@ -18,8 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Level1="*res://scenes/level_1.tscn"
-Pip="res://scenes/pip.tscn"
-PurpleAcorn="*res://scenes/purple_acorn.tscn"
+Pip="*res://scenes/pip.tscn"
+PurpleAcorn="res://scenes/purple_acorn.tscn"
 
 [rendering]
 

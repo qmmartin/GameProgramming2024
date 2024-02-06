@@ -1,3 +1,4 @@
 res://scenes/level_1.tscn
 res://scenes/pip.tscn
 res://scenes/purple_acorn.tscn
+res://scripts/purple_acorn.gd

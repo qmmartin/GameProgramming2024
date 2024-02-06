@@ -5,7 +5,7 @@ var is_picked_up = false
 func _ready():
 	position.x = 650
 	position.y = 320
-	show()
+	hide()
 
 func _process(delta):
 	if Input.is_key_pressed(KEY_R):
